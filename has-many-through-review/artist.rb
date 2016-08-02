@@ -4,21 +4,17 @@ class Artist
 
   def initialize(name)
     @name = name
-    @songs =[]
+    @songs = []
     @genres = []
   end
 
-  def add_song(song)
-    @songs << song
-    song.artist = self
+  def add_song(song_object)
+    @songs << song_object
+    song_object.artist = self
   end
 
   def genres
-    songs.collect do |song|
-      song.genre
-    end
+    songs.collect{|song| song.genre}
   end
-
-
 
 end
